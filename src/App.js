@@ -10,6 +10,8 @@ function App() {
     id: 213
   }]);
 
+  const [filter, setFilter] = useState('');
+
 
   const addTodo = todo => {
     if (!todo.text || /^\s*$/.test(todo.text)) {
@@ -31,14 +33,20 @@ function App() {
       setTodos(removeTodo);
   }
 
+  const filterTodo = search =>{
+      setFilter(search)
+  }
+
   return (
     <div className="App">
       <Header onSubmit={addTodo}
+              filterTodo={filterTodo}
       />
       <TodoBody
         todos={todos}
         deleteTodo ={ deleteTodo}
         updateTodo={updateTodo}
+        filter={filter}
       />
     </div>
   );

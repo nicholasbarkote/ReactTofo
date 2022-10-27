@@ -4,10 +4,9 @@ import { SiTodoist } from 'react-icons/si'
 import TodoForm from '../TodoForm/TodoForm'
 import './Header.css'
     
-function Header({onSubmit}) {
+function Header({onSubmit,filterTodo}) {
 
     const [isOpen, setIsOpen] = useState(false);
-
     return (
 
         <div className='Head'>
@@ -25,6 +24,7 @@ function Header({onSubmit}) {
                     placeholder="Search ToDo"
                     className="todo-search"
                     name="search"
+                    onChange={event =>{filterTodo(event.target.value)}}
                 />
 
             </form>

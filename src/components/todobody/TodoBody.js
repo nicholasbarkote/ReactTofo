@@ -3,7 +3,7 @@ import { RiCloseCircleLine } from 'react-icons/ri'
 import { TiEdit } from 'react-icons/ti'
 import TodoForm from '../TodoForm/TodoForm'
 import './TodoBody.css'
-function TodoBody({ todos,deleteTodo,updateTodo }) {
+function TodoBody({ todos,deleteTodo,updateTodo,filter}) {
 
     const [isOpen, setIsOpen] = useState();
 
@@ -33,7 +33,13 @@ function TodoBody({ todos,deleteTodo,updateTodo }) {
 
     
 
-    return todos.map((todo, index) => (
+    return todos.filter((val)=>{
+        if(val ===''){
+            return val
+        }else if( val.text.toLowerCase().includes(filter.toLowerCase())){
+            return val;
+        }
+    }).map((todo, index) => (
         <div
             className={`todo-row ${todo.priority}`}
             key={index}
