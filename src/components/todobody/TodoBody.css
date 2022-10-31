@@ -1,0 +1,40 @@
+.todo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+}
+.delete-icon {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.edit-icon {
+  color: #fff;
+}
+.high {
+  background: linear-gradient(
+    90deg,
+    rgb(255, 72, 72) 0%,
+    rgb(253, 0, 0) 100%
+  );
+}
+.low {
+  background: linear-gradient(
+    90deg,
+    rgb(129, 243, 138) 0%,
+    rgb(47, 236, 95) 100%
+  );
+}
+.medium {
+  background: linear-gradient(
+    90deg,
+    rgb(60, 121, 201) 0%,
+    rgb(4, 105, 172) 100%
+  );
+}
